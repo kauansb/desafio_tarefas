@@ -1,0 +1,25 @@
+# Bytecode do Python
+*.py[cod]
+__pycache__/
+
+# Ambiente virtual
+venv/
+
+# Configurações e variáveis de ambiente
+.env
+
+# Banco de dados
+db.sqlite3
+
+# Logs
+*.log
+
+# Arquivos de migrações temporários
+*migrations/__pycache__/
+
+# Arquivos estáticos coletados
+staticfiles/
+
+# Configurações do VSCode e PyCharm
+.vscode/
+.idea/
