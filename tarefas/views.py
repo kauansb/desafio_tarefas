@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from tarefas.models import Tarefa
 
-# Create your views here.
+
+class ListaTarefasView(ListView):
+    model = Tarefa
+    template_name = 'tarefas/lista_tarefas.html'
+    context_object_name = 'tarefas'

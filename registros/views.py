@@ -1,3 +1,8 @@
-from django.shortcuts import render
+from django.views.generic import ListView
+from registros.models import RegistroTempo
 
-# Create your views here.
+
+class ListaRegistrosView(ListView):
+    model = RegistroTempo
+    template_name = 'registros/lista_registros.html'
+    context_object_name = 'registros'

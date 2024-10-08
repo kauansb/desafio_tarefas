@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Tarefas{% endblock %}
+
+{% block content %}
+
+<ul>
+    {% for tarefa in tarefas %}
+        <li>{{ tarefa.usuario_responsavel }} - {{ tarefa.descricao }} - {{ tarefa.data_criacao }} </li>
+    {% endfor %}
+</ul>
+
+{% endblock %}

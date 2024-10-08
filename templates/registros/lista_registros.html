@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+
+{% block title %}Registros{% endblock %}
+
+{% block content %}
+
+<form method="get">
+    <input type="text" name="tarefa" placeholder="Tarefa">
+    <input type="date" name="data" placeholder="Data">
+    <input type="number" name="horas_trabalhadas" placeholder="Horas Trabalhadas">
+    <button type="submit">Filtrar</button>
+</form>
+
+<ul>
+    {% for registro in registros %}
+        <li>{{ registro.tarefa }} - {{ registro.data_registro }} - {{ registro.horas_trabalhadas }} horas</li>
+    {% endfor %}
+</ul>
+
+{% endblock %}
