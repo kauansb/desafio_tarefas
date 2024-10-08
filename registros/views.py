@@ -1,7 +1,6 @@
 from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.utils.dateparse import parse_date
-from django.db.models import Q
 from django.views.generic import ListView, CreateView
 from registros.models import RegistroTempo
 
