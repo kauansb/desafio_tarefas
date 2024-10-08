@@ -1,6 +1,8 @@
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
+
 from tarefas.models import Tarefa
+from tarefas.forms import TarefaModelForm
 
 
 class ListaTarefasView(ListView):
@@ -11,6 +13,6 @@ class ListaTarefasView(ListView):
 
 class CriarTarefaView(CreateView):
     model = Tarefa
-    fields = ['usuario_responsavel', 'descricao']
+    form_class = TarefaModelForm
     template_name = 'tarefas/criar_tarefa.html'
     success_url = reverse_lazy('lista_tarefas')

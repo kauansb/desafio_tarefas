@@ -2,7 +2,9 @@ from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.utils.dateparse import parse_date
 from django.views.generic import ListView, CreateView
+
 from registros.models import RegistroTempo
+from registros.forms import RegistroTempoForm
 
 class ListaRegistrosView(ListView):
     model = RegistroTempo
@@ -43,6 +45,6 @@ class ListaRegistrosView(ListView):
 
 class CriarRegistroTempoView(CreateView):
     model = RegistroTempo
-    fields = ['tarefa', 'data_registro', 'horas_trabalhadas', 'descricao']
+    form_class = RegistroTempoForm
     template_name = 'registros/criar_registro.html'
     success_url = reverse_lazy('lista_registros')

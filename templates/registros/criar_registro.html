@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+
+
+{% block title %}Criar Registro{% endblock %}
+
+{% block content %}
+
+<div class="container mt-5">
+    <div class="row justify-content-center">
+        <div class="col-md-8">
+            <form enctype="multipart/form-data" method="post" class="bg-light p-4 rounded shadow-sm">
+                {% csrf_token %}
+                <h1 class="text-center mb-4">Criar Registro</h1>
+                {{ form.as_p }}
+                <button type="submit" class="btn btn-primary w-100">Criar</button>
+            </form>
+        </div>
+    </div>
+</div>
+
+
+{% endblock %}

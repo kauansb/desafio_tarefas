@@ -4,18 +4,60 @@
 
 {% block content %}
 
-<form method="get">
-    <input type="text" name="usuario" placeholder="Usuário">
-    <input type="text" name="tarefa" placeholder="Tarefa">
-    <input type="date" name="data" placeholder="Data">
-    <input type="number" name="horas_trabalhadas" placeholder="Horas Trabalhadas">
-    <button type="submit">Filtrar</button>
-</form>
+<div class="container mt-4">
+    <h2 class="mb-4">Registros de Tempo</h2>
 
-<ul>
-    {% for registro in registros %}
-        <li>{{ registro.tarefa }} - {{ registro.data_registro }} - {{ registro.horas_trabalhadas }} horas</li>
-    {% endfor %}
-</ul>
+    <form method="get" class="mb-4">
+        <div class="row">
+            <div class="col-md-3 mb-2">
+                <div class="input-group">
+                    <span class="input-group-text">Usuário</span>
+                    <input type="text" class="form-control" name="usuario" placeholder="Usuário" value="{{ request.GET.usuario }}">
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="input-group">
+                    <span class="input-group-text">Tarefa</span>
+                    <input type="text" class="form-control" name="tarefa" placeholder="Tarefa" value="{{ request.GET.tarefa }}">
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="input-group">
+                    <span class="input-group-text">Data</span>
+                    <input type="date" class="form-control" name="data" value="{{ request.GET.data }}">
+                </div>
+            </div>
+            <div class="col-md-3 mb-2">
+                <div class="input-group">
+                    <span class="input-group-text">Horas</span>
+                    <input type="number" class="form-control" name="horas_trabalhadas" placeholder="Horas Trabalhadas" value="{{ request.GET.horas_trabalhadas }}">
+                </div>
+            </div>
+        </div>
+        <button type="submit" class="btn btn-primary mt-2">Filtrar</button>
+        <a href="{% url 'lista_registros' %}" class="btn btn-secondary mt-2">Limpar filtros</a>
+    </form>
+
+    <table class="table table-striped table-hover">
+        <thead>
+            <tr>
+                <th>Tarefa</th>
+                <th>Data de Registro</th>
+                <th>Horas Trabalhadas</th>
+                <th>Descrição</th>
+            </tr>
+        </thead>
+        <tbody>
+            {% for registro in registros %}
+            <tr>
+                <td>{{ registro.tarefa }}</td>
+                <td>{{ registro.data_registro|date:"d/m/Y" }}</td>
+                <td>{{ registro.horas_trabalhadas }} horas</td>
+                <td>{{ registro.descricao }}</td>
+            </tr>
+            {% endfor %}
+        </tbody>
+    </table>
+</div>
 
 {% endblock %}
