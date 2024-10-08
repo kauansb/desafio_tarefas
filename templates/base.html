@@ -13,17 +13,17 @@
     <header class="d-flex justify-content-center py-3">
       <ul class="nav nav-pills">
         <li class="nav-item"><a href="#" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Tarefas</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Registros</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Criar Tarefa</a></li>
-        <li class="nav-item"><a href="#" class="nav-link">Criar Registro</a></li>
+        <li class="nav-item"><a href="{% url 'lista_tarefas' %}" class="nav-link">Tarefas</a></li>
+        <li class="nav-item"><a href="{% url 'lista_registros' %}" class="nav-link">Registros</a></li>
+        <li class="nav-item"><a href="{% url 'criar_tarefa' %}" class="nav-link">Criar Tarefa</a></li>
+        <li class="nav-item"><a href="{% url 'criar_registro' %}" class="nav-link">Criar Registro</a></li>
       </ul>
     </header>
 
 
     {% block content %}{% endblock %}
 
-    <!-- Bootstrap JS and dependencies (Popper.js) -->
+    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 
 </body>
