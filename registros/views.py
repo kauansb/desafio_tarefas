@@ -1,7 +1,8 @@
+from django.urls import reverse_lazy
 from django.contrib.auth.models import User
 from django.utils.dateparse import parse_date
 from django.db.models import Q
-from django.views.generic import ListView
+from django.views.generic import ListView, CreateView
 from registros.models import RegistroTempo
 
 class ListaRegistrosView(ListView):
@@ -39,3 +40,10 @@ class ListaRegistrosView(ListView):
                 pass  # Se não for possível converter para float, ignora o filtro
 
         return queryset
+
+
+class CriarRegistroTempoView(CreateView):
+    model = RegistroTempo
+    fields = ['tarefa', 'data_registro', 'horas_trabalhadas', 'descricao']
+    template_name = 'registros/criar_registro.html'
+    success_url = reverse_lazy('lista_registros')
