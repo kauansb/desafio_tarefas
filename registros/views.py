@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.db.models import Q
 from django.utils.dateparse import parse_date
@@ -40,3 +41,7 @@ class CriarRegistroTempoView(CreateView):
     form_class = RegistroTempoForm
     template_name = 'registros/criar_registro.html'
     success_url = reverse_lazy('lista_registros')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Registro de tempo adicionado com sucesso!')
+        return super().form_valid(form)

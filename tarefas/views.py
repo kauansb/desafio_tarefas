@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.urls import reverse_lazy
 from django.views.generic import ListView, CreateView
 
@@ -16,3 +17,7 @@ class CriarTarefaView(CreateView):
     form_class = TarefaModelForm
     template_name = 'tarefas/criar_tarefa.html'
     success_url = reverse_lazy('lista_tarefas')
+
+    def form_valid(self, form):
+        messages.success(self.request, 'Tarefa criada com sucesso!')
+        return super().form_valid(form)
