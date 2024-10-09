@@ -14,9 +14,9 @@
 <body>
     <header class="d-flex justify-content-center py-3 text-bg-dark">
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link active" aria-current="page">Home</a></li>
-        <li class="nav-item"><a href="{% url 'lista_tarefas' %}" class="nav-link">Tarefas</a></li>
-        <li class="nav-item"><a href="{% url 'lista_registros' %}" class="nav-link">Registros</a></li>
+        <li class="nav-item"><a href="{% url 'home' %}" class="nav-link {% if request.path == '/' %}active{% endif %}" aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="{% url 'lista_tarefas' %}" class="nav-link {% if request.path == '/tarefas/' %}active{% endif %}">Tarefas</a></li>
+        <li class="nav-item"><a href="{% url 'lista_registros' %}" class="nav-link {% if request.path == '/registros/' %}active{% endif %}">Registros</a></li>
       </ul>
     </header>
 
