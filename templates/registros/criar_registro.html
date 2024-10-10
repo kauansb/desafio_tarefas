@@ -1,6 +1,9 @@
 {% extends 'base.html' %}
 
 {% block content %}
+
+{% load widget_tweaks %}
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -11,7 +14,7 @@
                 <!-- Tarefa associada -->
                 <div class="mb-3">
                     <label for="id_tarefa" class="form-label">Tarefa</label>
-                    {{ form.tarefa }}
+                    {{ form.tarefa|add_class:"form-control" }}
                     <div class="invalid-feedback">
                         Por favor, selecione a tarefa.
                     </div>
@@ -20,7 +23,7 @@
                 <!-- Horas trabalhadas -->
                 <div class="mb-3">
                     <label for="id_horas_trabalhadas" class="form-label">Horas Trabalhadas</label>
-                    {{ form.horas_trabalhadas }}
+                    {{ form.horas_trabalhadas|add_class:"form-control" }}
                     <div class="invalid-feedback">
                         Por favor, insira a quantidade de horas trabalhadas. Ex: 1,2...
                     </div>
@@ -29,7 +32,7 @@
                 <!-- Descrição do trabalho -->
                 <div class="mb-3">
                     <label for="id_descricao" class="form-label">Descrição do Trabalho</label>
-                    {{ form.descricao }}
+                    {{ form.descricao|add_class:"form-control" }}
                     <div class="invalid-feedback">
                         Por favor, insira uma descrição para o registro. Ex: atualização de dependências dev
                     </div>

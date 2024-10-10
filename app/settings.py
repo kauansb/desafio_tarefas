@@ -29,6 +29,8 @@ INSTALLED_APPS = [
 
     'tarefas',
     'registros',
+
+    'widget_tweaks', # Adiciona classes personalizadas
 ]
 
 MIDDLEWARE = [

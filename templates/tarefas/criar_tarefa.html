@@ -2,6 +2,9 @@
 
 
 {% block content %}
+
+{% load widget_tweaks %}
+
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
@@ -12,7 +15,7 @@
                 <!-- Usuário responsável -->
                 <div class="mb-3">
                     <label for="id_usuario_responsavel" class="form-label">Usuário Responsável</label>
-                    {{ form.usuario_responsavel }}
+                    {{ form.usuario_responsavel|add_class:"form-control" }}
                     <div class="invalid-feedback">
                         Por favor, selecione o usuário responsável.
                     </div>
@@ -21,7 +24,7 @@
                 <!-- Descrição -->
                 <div class="mb-3">
                     <label for="id_descricao" class="form-label">Descrição da Tarefa</label>
-                    {{ form.descricao }}
+                    {{ form.descricao|add_class:"form-control" }}
                     <div class="invalid-feedback">
                         A descrição da tarefa é obrigatória. Ex: Atualizar dependências
                     </div>
