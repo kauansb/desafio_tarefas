@@ -3,18 +3,16 @@ main {
     padding: 20px;
 }
 
-/* Estilos para telas de notebook (largura até 1024px) */
 @media (max-width: 1024px) {
     main {
-        padding: 15px; /* Ajuste no padding para telas menores */
-        font-size: 16px; /* Ajuste de tamanho de fonte se necessário */
+        padding: 15px; 
+        font-size: 16px;
     }
 }
 
-/* Estilos para telas de monitores maiores (largura acima de 1024px) */
 @media (min-width: 1025px) {
     main {
-        padding: 30px; /* Mais espaço nas bordas para telas grandes */
-        font-size: 20px; /* Tamanho de fonte um pouco maior */
+        padding: 30px;
+        font-size: 20px;
     }
 }

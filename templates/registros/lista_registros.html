@@ -41,7 +41,7 @@
     <a href="{% url 'criar_registro' %}" class="btn btn-primary mb-3">Criar Novo Registro</a>
 
     <table class="table table-striped table-hover">
-        <thead>
+        <thead class="table-dark">
             <tr>
                 <th>Tarefa</th>
                 <th>Data de Registro</th>
@@ -54,7 +54,7 @@
             <tr>
                 <td>{{ registro.tarefa }}</td>
                 <td>{{ registro.data_registro|date:"d/m/Y" }}</td>
-                <td>{{ registro.horas_trabalhadas }} horas</td>
+                <td>{{ registro.horas_trabalhadas }} hora(s)</td>
                 <td>{{ registro.descricao }}</td>
             </tr>
             {% endfor %}
