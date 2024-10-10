@@ -41,20 +41,7 @@
     </div>
 </div>
 
-<script>
-    // Validação de formulário do Bootstrap
-    (function () {
-        'use strict'
-        var forms = document.querySelectorAll('.needs-validation')
-        Array.prototype.slice.call(forms).forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
-</script>
+{% load static %}
+<script src="{% static 'js/criar_registro.js' %}"></script>
+
 {% endblock %}

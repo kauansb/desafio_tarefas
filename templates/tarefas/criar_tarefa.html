@@ -1,6 +1,5 @@
 {% extends 'base.html' %}
 
-{% block title %}Criar Tarefa{% endblock %}
 
 {% block content %}
 <div class="container mt-5">
@@ -10,7 +9,7 @@
                 {% csrf_token %}
                 <h1 class="text-center mb-4">Criar Tarefa</h1>
                 
-                <!-- usuário responsável -->
+                <!-- Usuário responsável -->
                 <div class="mb-3">
                     <label for="id_usuario_responsavel" class="form-label">Usuário Responsável</label>
                     {{ form.usuario_responsavel }}
@@ -19,7 +18,7 @@
                     </div>
                 </div>
 
-                <!-- descrição -->
+                <!-- Descrição -->
                 <div class="mb-3">
                     <label for="id_descricao" class="form-label">Descrição da Tarefa</label>
                     {{ form.descricao }}
@@ -34,20 +33,7 @@
     </div>
 </div>
 
-<script>
-    // Validação de formulário do Bootstrap
-    (function () {
-        'use strict'
-        var forms = document.querySelectorAll('.needs-validation')
-        Array.prototype.slice.call(forms).forEach(function (form) {
-            form.addEventListener('submit', function (event) {
-                if (!form.checkValidity()) {
-                    event.preventDefault()
-                    event.stopPropagation()
-                }
-                form.classList.add('was-validated')
-            }, false)
-        })
-    })()
-</script>
+{% load static %}
+<script src="{% static 'js/criar_tarefa.js' %}"></script>
+
 {% endblock %}
