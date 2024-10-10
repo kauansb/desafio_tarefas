@@ -1,22 +1,53 @@
 {% extends 'base.html' %}
 
-
 {% block title %}Criar Tarefa{% endblock %}
 
 {% block content %}
-
 <div class="container mt-5">
     <div class="row justify-content-center">
         <div class="col-md-8">
-            <form enctype="multipart/form-data" method="post" class="bg-light p-4 rounded shadow-sm">
+            <form enctype="multipart/form-data" method="post" class="bg-light p-4 rounded shadow-sm needs-validation" novalidate>
                 {% csrf_token %}
                 <h1 class="text-center mb-4">Criar Tarefa</h1>
-                {{ form.as_p }}
+                
+                <!-- usuário responsável -->
+                <div class="mb-3">
+                    <label for="id_usuario_responsavel" class="form-label">Usuário Responsável</label>
+                    {{ form.usuario_responsavel }}
+                    <div class="invalid-feedback">
+                        Por favor, insira o usuário responsável.
+                    </div>
+                </div>
+
+                <!-- descrição -->
+                <div class="mb-3">
+                    <label for="id_descricao" class="form-label">Descrição da Tarefa</label>
+                    {{ form.descricao }}
+                    <div class="invalid-feedback">
+                        A descrição da tarefa é obrigatória.
+                    </div>
+                </div>
+
                 <button type="submit" class="btn btn-primary w-100">Criar</button>
             </form>
         </div>
     </div>
 </div>
 
-
+<script>
+    // Validação de formulário do Bootstrap
+    (function () {
+        'use strict'
+        var forms = document.querySelectorAll('.needs-validation')
+        Array.prototype.slice.call(forms).forEach(function (form) {
+            form.addEventListener('submit', function (event) {
+                if (!form.checkValidity()) {
+                    event.preventDefault()
+                    event.stopPropagation()
+                }
+                form.classList.add('was-validated')
+            }, false)
+        })
+    })()
+</script>
 {% endblock %}
