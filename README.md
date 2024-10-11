@@ -44,7 +44,7 @@ python manage.py migrate
 
 ```
 
-Criar um Superusuário para acessar o painel administrativo do Django (Necessário para Criar Tarefas!)
+Criar um Superusuário para acessar o painel administrativo do Django
 ```bash
 python manage.py createsuperuser
 
