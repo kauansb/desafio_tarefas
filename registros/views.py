@@ -7,6 +7,7 @@ from django.views.generic import ListView, CreateView
 from registros.models import RegistroTempo
 from registros.forms import RegistroTempoForm
 
+
 class ListaRegistrosView(ListView):
     model = RegistroTempo
     template_name = 'registros/lista_registros.html'
