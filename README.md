@@ -1,6 +1,6 @@
 # Sistema de Controle de Tarefas e Registro de Tempo
 
-Este projeto é um sistema simples de controle de tarefas e registro de tempo, desenvolvido com Django como parte de um desafio técnico. Ele permite o cadastro de tarefas e registros de tempo associados a essas tarefas, além de listagens com filtros.
+Este projeto é um sistema de controle de tarefas e registro de tempo, desenvolvido com Django como parte de um desafio técnico. Ele permite o cadastro de tarefas e registros de tempo associados a essas tarefas, além de listagens com filtros.
 
 ## Funcionalidades
 
