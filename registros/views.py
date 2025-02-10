@@ -12,6 +12,7 @@ class ListaRegistrosView(ListView):
     model = RegistroTempo
     template_name = 'registros/lista_registros.html'
     context_object_name = 'registros'
+    paginate_by = 10
 
     def get_queryset(self):
         queryset = super().get_queryset()
